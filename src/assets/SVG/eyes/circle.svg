@@ -8,7 +8,7 @@
   viewBox="0 0 214.33 74.28"
 >
   <g id="circle_eyes_group" data-name="eyes_01_group">
-    <circle class="cls-1" cx="37" cy="37.28" r="36.5" />
-    <circle class="cls-1" cx="177.33" cy="37" r="36.5" />
+    <circle fill="none" stroke="black" cx="37" cy="37.28" r="36.5" />
+    <circle fill="none" stroke="black" cx="177.33" cy="37" r="36.5" />
   </g>
 </svg>

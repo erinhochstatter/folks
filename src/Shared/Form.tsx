@@ -1,4 +1,6 @@
-export interface FormProps {
+import { FC, BaseSyntheticEvent } from "react";
+
+export interface Props {
 	title: string;
 	svgTraits: SvgTrait[];
 }
@@ -14,12 +16,12 @@ export interface SvgTrait {
 	selectCallback: (event: BaseSyntheticEvent) => void;
 }
 
-export const Form: FC<FormProps> = ({ title, svgTraits }: FormProps) => {
+export const Form: FC<Props> = ({ title, svgTraits }: Props) => {
 	return (
 		<div>
 			<h1>{title}</h1>
 			<form id={`${title}-svg-options`}>
-				{svgTraits.map((trait) => (
+				{svgTraits.map((trait: SvgTrait) => (
 					<Select key={trait.name} trait={trait} formName={title} />
 				))}
 			</form>

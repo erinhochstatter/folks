@@ -1,5 +1,6 @@
 import "./App.css";
 import { Face } from "./AvatarBuilder";
+import { Face2 } from "./AvatarBuilder/Face2";
 
 function App() {
 	return (

@@ -11,8 +11,7 @@
   "dependencies": {
     "@reach/listbox": "^0.18.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^5.3.6"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
@@ -22,8 +21,5 @@
     "vite": "^3.2.3",
     "vite-plugin-svgr": "^2.4.0",
     "vitest": "^0.25.3"
-  },
-  "resolutions": {
-    "styled-components": "^5"
   }
 }

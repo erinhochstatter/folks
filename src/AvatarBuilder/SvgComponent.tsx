@@ -1,12 +1,11 @@
-import { FC, ReactNode } from "react";
+import { FC, SVGProps } from "react";
 import { useSvgImport } from "./useSvgImport";
 
 interface Props {
 	imageName: string;
-	imageType: "face" | "brow";
+	imageType: "face" | "brow" | "eyes";
 	containerStyles?: string;
 	svgProps?: React.SVGProps<SVGSVGElement>;
-	children?: ReactNode;
 }
 
 export const SvgComponent: FC<Props> = ({
@@ -14,7 +13,6 @@ export const SvgComponent: FC<Props> = ({
 	imageType,
 	svgProps,
 	containerStyles,
-	children,
 }: Props) => {
 	const { loading, SvgImage } = useSvgImport(imageName, imageType);
 
@@ -26,8 +24,7 @@ export const SvgComponent: FC<Props> = ({
 				)}
 				{SvgImage && (
 					<div className={containerStyles}>
-						<SvgImage {...svgProps} />
-						{children}
+						<SvgImage {...svgProps}></SvgImage>
 					</div>
 				)}
 			</>

@@ -1,16 +1,10 @@
-import { BaseSyntheticEvent, useState } from "react";
+import { BaseSyntheticEvent, FC, useState } from "react";
 import { SvgComponent } from "./SvgComponent";
-import { Eyes } from "./Eyes/Eyes";
-import { Form } from "../Shared";
+import { Form, SelectOption } from "../Shared";
 
 interface Props {
 	svgProps?: React.SVGProps<SVGSVGElement>;
 }
-
-type SelectOption = {
-	label: string;
-	value: string;
-};
 
 export const Face: FC<Props> = (props: Props) => {
 	const FILL_COLORS: SelectOption[] = [
@@ -60,9 +54,7 @@ export const Face: FC<Props> = (props: Props) => {
 				imageType="face"
 				imageName={fileName}
 				svgProps={{ fill: fillColor }}
-			>
-				<Eyes />
-			</SvgComponent>
+			/>
 			<Form title="face" svgTraits={[shapeTrait, colorTrait]} />
 		</div>
 	);

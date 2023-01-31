@@ -1,0 +1,9 @@
+/* resulting css */
+  {
+  width: 250px;
+  height: 250px;
+  filter: contrast(170%) brightness(1000%);
+  background:
+    linear-gradient(0deg, rgba(0, 0, 255, 1), rgba(0, 0, 0, 0)),
+    url(/👆/that/noise.svg);
+}

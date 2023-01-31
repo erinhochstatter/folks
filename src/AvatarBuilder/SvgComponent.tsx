@@ -1,11 +1,12 @@
-import { FC, SVGProps } from "react";
+import { FC, ReactElement, SVGProps } from "react";
 import { useSvgImport } from "./useSvgImport";
 
 interface Props {
 	imageName: string;
 	imageType: "face" | "brow" | "eyes";
 	containerStyles?: string;
-	svgProps?: React.SVGProps<SVGSVGElement>;
+	svgProps?: SVGProps<SVGSVGElement>;
+	children?: ReactElement;
 }
 
 export const SvgComponent: FC<Props> = ({
@@ -13,6 +14,7 @@ export const SvgComponent: FC<Props> = ({
 	imageType,
 	svgProps,
 	containerStyles,
+	children,
 }: Props) => {
 	const { loading, SvgImage } = useSvgImport(imageName, imageType);
 
@@ -24,7 +26,17 @@ export const SvgComponent: FC<Props> = ({
 				)}
 				{SvgImage && (
 					<div className={containerStyles}>
-						<SvgImage {...svgProps}></SvgImage>
+						<SvgImage {...svgProps}>
+							<circle
+								id="pinkster"
+								x="50"
+								y="150"
+								width="50"
+								height="50"
+								fill="pink"
+							/>
+							{children}
+						</SvgImage>
 					</div>
 				)}
 			</>

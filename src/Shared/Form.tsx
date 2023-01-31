@@ -1,4 +1,4 @@
-import { FC, BaseSyntheticEvent } from "react";
+import { FC, BaseSyntheticEvent, ReactElement } from "react";
 
 export interface Props {
 	title: string;
@@ -40,7 +40,6 @@ export const Select: FC<SelectProps> = ({ trait, formName }: SelectProps) => {
 			<span id={`${formName}-shape-label`}>{`Choose a ${name}`}</span>
 			<select
 				aria-labelledby="${title.uppercase} selector"
-				value={options[0].label}
 				onChange={selectCallback}
 			>
 				{options.map((option) => (

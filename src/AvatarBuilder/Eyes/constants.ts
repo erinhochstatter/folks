@@ -10,6 +10,6 @@
 	];
 
 	export const EYE_SHAPES: SelectOption[] = [
-		{ label: "Monolid", value: "monolid" },
 		{ label: "Just Round", value: "circle" },
+		{ label: "Monolid", value: "monolid" },
 	];

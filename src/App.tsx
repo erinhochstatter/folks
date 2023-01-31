@@ -1,6 +1,5 @@
 import "./App.css";
-import { Face } from "./AvatarBuilder";
-import { Face2 } from "./AvatarBuilder/Face2";
+import { Face3 } from "./AvatarBuilder/Face/Face3";
 
 function App() {
 	return (
@@ -27,7 +26,7 @@ function App() {
 					</a>
 				</li>
 			</ul>
-			<Face />
+			<Face3 />
 		</div>
 	);
 }

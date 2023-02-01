@@ -1,3 +1,3 @@
-export * from "./SvgComponent";
 export * from "./Face";
 export * from "./Eyes";
+export * from "./Brows";

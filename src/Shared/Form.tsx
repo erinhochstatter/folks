@@ -18,9 +18,35 @@ export interface SvgTrait {
 
 export const Form: FC<Props> = ({ title, svgTraits }: Props) => {
 	return (
-		<div>
-			<h1>{title}</h1>
-			<form id={`${title}-svg-options`}>
+		<div
+			style={{
+				display: "flex",
+				flexDirection: "row",
+				alignItems: "space-between",
+				border: "1px solid",
+				borderColor: "white",
+				borderRadius: 12,
+				marginBottom: 8,
+				padding: 8,
+			}}
+		>
+			<h1
+				style={{
+					flex: 1,
+					fontSize: 20,
+				}}
+			>
+				{title}
+			</h1>
+			<form
+				id={`${title}-svg-options`}
+				style={{
+					flex: 1,
+					fontSize: 16,
+					flexDirection: "column",
+					alignItems: "flex-start",
+				}}
+			>
 				{svgTraits.map((trait: SvgTrait) => (
 					<Select key={trait.name} trait={trait} formName={title} />
 				))}
@@ -36,11 +62,19 @@ interface SelectProps {
 export const Select: FC<SelectProps> = ({ trait, formName }: SelectProps) => {
 	const { name, options, selectCallback } = trait;
 	return (
-		<div>
+		<div
+			style={{
+				display: "flex",
+				flexDirection: "row",
+				padding: "4 16",
+				justifyContent: "space-between",
+			}}
+		>
 			<span id={`${formName}-shape-label`}>{`Choose a ${name}`}</span>
 			<select
 				aria-labelledby="${title.uppercase} selector"
 				onChange={selectCallback}
+				style={{ width: 120 }}
 			>
 				{options.map((option) => (
 					<option value={option.value} key={option.label}>

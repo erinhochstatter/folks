@@ -18,11 +18,7 @@ interface BrowProps {
 
 const Unibrow: FC<BrowProps> = ({ browColor }) => {
 	return (
-		<g
-			id="unibrow_brows_group"
-			data-name="brows_01_group"
-			transform="translate(120 200)"
-		>
+		<g id="unibrow_brows_group" transform="translate(120 200)">
 			<defs>
 				<linearGradient id="browGradient" gradientTransform="rotate(60)">
 					<stop offset="5%" stopColor="gold" />
@@ -36,23 +32,26 @@ const Unibrow: FC<BrowProps> = ({ browColor }) => {
 						stitchTiles="stitch"
 					/>
 				</filter>
+				<rect
+					id="unibrow"
+					x="0"
+					y="0"
+					width="300"
+					height="40"
+					rx="12"
+					ry="12"
+				/>
+
+				<clipPath id="turbulentUnibrow" clipPathUnits="userSpaceOnUse">
+					<use xlinkHref="#unibrow" />
+				</clipPath>
 			</defs>
 
-			<rect
-				width="100%"
-				height="100%"
-				rx="12"
-				ry="12"
+			<use href="#unibrow" fill="url(#browGradient)" />
+			<use
+				clipPath="url(#turbulentUnibrow)"
+				href="#unibrow"
 				filter="url(#noiseFilter)"
-			/>
-			<rect
-				x="0"
-				y="0"
-				width="300"
-				height="40"
-				rx="12"
-				ry="12"
-				fill="url(#browGradient)"
 			/>
 		</g>
 	);

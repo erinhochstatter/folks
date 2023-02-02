@@ -14,6 +14,7 @@ vite dev
   - import the 'focused' colors from the website & branding materials
   - test out more sophisticated gradients (eg. more points for a wavy hair gradient)  
   - choose color pairs for gradients 
+  - make a logo where it's "folx" and the "x" is the focused logo rotated 45-degrees
   - are we running with the v1 style (forward, simplified hair, spooky eyes) or the 'realistic' style (3/4 view, smiling, recognizeable individual) 
   - Given 👆 what are the "rules" of the facial features, _i.e._: 
     - which elements are solid (eyebrows)

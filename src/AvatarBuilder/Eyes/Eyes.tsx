@@ -8,13 +8,13 @@ interface Props {
 export const Eyes: FC<Props> = ({ eyeColor, eyeShape }) => {
 	switch (eyeShape) {
 		case "circle":
-			return <CircularEyes eyeColor={eyeColor}></CircularEyes>;
+			return <CircularEyes eyeColor={eyeColor} />;
 
 		case "monolid":
-			return <Monolid eyeColor={eyeColor}></Monolid>;
+			return <Monolid eyeColor={eyeColor} />;
 
 		default:
-			return <CircularEyes eyeColor={eyeColor}></CircularEyes>;
+			return <CircularEyes eyeColor={eyeColor} />;
 	}
 };
 
@@ -24,10 +24,10 @@ interface EyeProps {
 
 const CircularEyes: FC<EyeProps> = ({ eyeColor }) => {
 	return (
-		<g id="circle_eyes_group" data-name="circular_eyes_group">
+		<g id="circle_eyes_group">
 			<defs>
 				<linearGradient id="eyeGradient" gradientTransform="rotate(60)">
-					<stop offset="5%" stopColor="transparent"></stop>
+					<stop offset="5%" stopColor="transparent" />
 					<stop offset="95%" stopColor={eyeColor}></stop>
 				</linearGradient>
 				<filter id="noiseFilter">
@@ -82,11 +82,7 @@ const CircularEyes: FC<EyeProps> = ({ eyeColor }) => {
 
 const Monolid: FC<EyeProps> = ({ eyeColor }) => {
 	return (
-		<g
-			id="monolid_eyes_group"
-			data-name="eyes_01_group"
-			transform="translate(85 300)"
-		>
+		<g id="monolid_eyes_group" transform="translate(85 300)">
 			<defs>
 				<linearGradient id="eyeGradient" gradientTransform="rotate(60)">
 					<stop offset="5%" stopColor="transparent"></stop>

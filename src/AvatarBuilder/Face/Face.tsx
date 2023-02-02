@@ -1,10 +1,21 @@
-import { BaseSyntheticEvent, FC, useState, ReactNode } from "react";
+import { BaseSyntheticEvent, FC, useState } from "react";
 import { Form } from "../../Shared";
 import { Eyes, EYE_COLORS, EYE_SHAPES } from "../Eyes";
 import { Brows, BROW_COLORS, BROW_SHAPES } from "../Brows";
-import { FACE_SHAPES, FILL_COLORS } from "./constants";
+import {
+	FACE_SHAPES,
+	FILL_COLORS,
+	FaceShapeProps,
+	FaceInstanceProps,
+} from "./constants";
 import { Mouth, LIP_COLORS, LIP_SHAPES } from "../Mouth";
 import { Nose, NOSE_SHAPES } from "../Nose";
+import {
+	ForegroundHair,
+	BackgroundHair,
+	HAIR_COLORS,
+	HAIR_STYLES,
+} from "../Hair";
 
 export const Face: FC = () => {
 	// State
@@ -23,6 +34,9 @@ export const Face: FC = () => {
 	// -- Lips
 	const [lipShape, setLipShape] = useState(LIP_SHAPES[0].value);
 	const [lipColor, setLipColor] = useState(LIP_COLORS[0].value);
+	// -- Hair
+	const [hairStyle, setHairStyle] = useState(HAIR_STYLES[0].value);
+	const [hairColor, setHairColor] = useState(HAIR_COLORS[0].value);
 
 	//Events
 	// -- Face
@@ -78,6 +92,17 @@ export const Face: FC = () => {
 	const onLipColorChange = (event: BaseSyntheticEvent) => {
 		const { value } = event.target;
 		setLipColor(value);
+	};
+
+	//-- Lip
+	const onHairStyleChange = (event: BaseSyntheticEvent) => {
+		const { value } = event.target;
+		setHairStyle(value);
+	};
+
+	const onHairColorChange = (event: BaseSyntheticEvent) => {
+		const { value } = event.target;
+		setHairColor(value);
 	};
 
 	const faceShapeTrait = {
@@ -140,44 +165,44 @@ export const Face: FC = () => {
 		selectCallback: onLipColorChange,
 	};
 
+	const hairStyleTrait = {
+		name: "shape",
+		options: HAIR_STYLES,
+		selectCallback: onHairStyleChange,
+	};
+
+	const hairColorTrait = {
+		name: "color",
+		options: HAIR_COLORS,
+		selectCallback: onHairColorChange,
+	};
+
 	return (
 		<div style={{ height: 720 }}>
 			<svg
 				id="face"
-				data-name="face-shape"
 				xmlns="http://www.w3.org/2000/svg"
 				width="551"
 				height="720"
 				viewBox="0 0 551 720"
 			>
-				<filter id="noiseFilter">
-					<feTurbulence
-						type="fractalNoise"
-						baseFrequency="0.65"
-						numOctaves="2"
-						stitchTiles="stitch"
-					/>
-				</filter>
+				{/* <BackgroundHair hairStyle={hairStyle} hairColor={hairColor} /> */}
 				<FaceShape shape={faceShape} skinTone={skinTone}>
-					<Brows browColor={browColor} browShape={browShape} />
-					<Eyes eyeColor={eyeColor} eyeShape={eyeShape} />
-					<Nose skinTone={noseColor} noseShape={noseShape} />}
-					<Mouth lipColor={lipColor} mouthShape={lipShape} />
+					<Brows browShape={browShape} browColor={browColor} />
+					<Eyes eyeShape={eyeShape} eyeColor={eyeColor} />
+					<Nose noseShape={noseShape} skinTone={noseColor} />
+					<Mouth mouthShape={lipShape} lipColor={lipColor} />
 				</FaceShape>
+				{/* <ForegroundHair hairStyle={hairStyle} hairColor={hairColor} /> */}
 			</svg>
 			<Form title="face" svgTraits={[faceShapeTrait, skinToneTrait]} />
+			<Form title="hair" svgTraits={[hairStyleTrait, hairColorTrait]} />
 			<Form title="brow" svgTraits={[browShapeTrait, browColorTrait]} />
 			<Form title="eyes" svgTraits={[eyeShapeTrait, eyeColorTrait]} />
 			<Form title="nose" svgTraits={[noseShapeTrait, noseColorTrait]} />
 			<Form title="lips" svgTraits={[lipShapeTrait, lipColorTrait]} />
 		</div>
 	);
-};
-
-type FaceShapeProps = {
-	shape: string;
-	skinTone?: string;
-	children: ReactNode;
 };
 
 const FaceShape: FC<FaceShapeProps> = ({ skinTone, shape, children }) => {
@@ -193,22 +218,21 @@ const FaceShape: FC<FaceShapeProps> = ({ skinTone, shape, children }) => {
 	}
 };
 
-type FaceThingProps = {
-	skinTone?: string;
-	children: ReactNode;
-};
-const OvalFace: FC<FaceThingProps> = ({ skinTone: fillColor, children }) => {
+const OvalFace: FC<FaceInstanceProps> = ({ skinTone: fillColor, children }) => {
 	return (
-		<g id="face-group" data-name="oval-face-group">
+		<g id="face-group">
 			<ellipse fill={fillColor} cx="275.5" cy="353.34" rx="275" ry="352.84" />
 			{children}
 		</g>
 	);
 };
 
-const HeartFace: FC<FaceThingProps> = ({ skinTone: fillColor, children }) => {
+const HeartFace: FC<FaceInstanceProps> = ({
+	skinTone: fillColor,
+	children,
+}) => {
 	return (
-		<g id="face-group" data-name="heart-face-group">
+		<g id="face-group">
 			<path
 				fill={fillColor}
 				d="M550.5,307.59c0,194.87-178.06,407.51-275,407.51S.5,502.46,.5,307.59,123.62,.5,275.5,.5s275,112.22,275,307.09Z"

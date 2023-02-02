@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
 import { SelectOption } from "../../Shared";
 
+// -- options
 export const FILL_COLORS: SelectOption[] = [
 	{ label: "Champagne", value: "#FAE7D0" },
 	{ label: "Zombie", value: "#dfc183" },
@@ -16,3 +18,15 @@ export const FACE_SHAPES: SelectOption[] = [
 	{ label: "Heart-Shaped", value: "heart" },
 	{ label: "Oval-Shaped", value: "oval" },
 ];
+
+// -- types
+export type FaceShapeProps = {
+	shape: string;
+	skinTone?: string;
+	children: ReactNode;
+};
+
+export type FaceInstanceProps = {
+	skinTone?: string;
+	children: ReactNode;
+};

@@ -33,6 +33,6 @@ vite dev
     - figure out how to manage the boilerplate in the Face file
   - If there is a way to generate the defs, given a particular path using a function, do that?
   - Add the background view
-  - Scale down the giant view box, and make it not the same size as the face 🙈
+  - ✅ Scale down the giant view box, and make it not the same size as the face 🙈
   - [set up downloading](https://github.com/sharonchoong/svg-exportJS)
 				

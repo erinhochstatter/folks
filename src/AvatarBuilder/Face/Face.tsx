@@ -184,7 +184,7 @@ export const Face: FC = () => {
 				xmlns="http://www.w3.org/2000/svg"
 				width="551"
 				height="720"
-				viewBox="0 0 551 720"
+				viewBox="0 0 500 500"
 			>
 				{/* <BackgroundHair hairStyle={hairStyle} hairColor={hairColor} /> */}
 				<FaceShape shape={faceShape} skinTone={skinTone}>
@@ -220,7 +220,7 @@ const FaceShape: FC<FaceShapeProps> = ({ skinTone, shape, children }) => {
 
 const OvalFace: FC<FaceInstanceProps> = ({ skinTone: fillColor, children }) => {
 	return (
-		<g id="face-group">
+		<g id="face-group" transform="scale(0.75, .75)">
 			<ellipse fill={fillColor} cx="275.5" cy="353.34" rx="275" ry="352.84" />
 			{children}
 		</g>
@@ -232,7 +232,7 @@ const HeartFace: FC<FaceInstanceProps> = ({
 	children,
 }) => {
 	return (
-		<g id="face-group">
+		<g id="face-group" transform="scale(0.75, .75)">
 			<path
 				fill={fillColor}
 				d="M550.5,307.59c0,194.87-178.06,407.51-275,407.51S.5,502.46,.5,307.59,123.62,.5,275.5,.5s275,112.22,275,307.09Z"

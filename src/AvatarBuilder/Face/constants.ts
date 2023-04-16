@@ -17,6 +17,7 @@ export const FILL_COLORS: SelectOption[] = [
 export const FACE_SHAPES: SelectOption[] = [
 	{ label: "Heart-Shaped", value: "heart" },
 	{ label: "Oval-Shaped", value: "oval" },
+	{ label: "Square-Shaped", value: "square" },
 ];
 
 // -- types

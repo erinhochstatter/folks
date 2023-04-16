@@ -212,6 +212,8 @@ const FaceShape: FC<FaceShapeProps> = ({ skinTone, shape, children }) => {
 
 		case "heart":
 			return <HeartFace skinTone={skinTone}>{children}</HeartFace>;
+		case "square":
+			return <SquareFace skinTone={skinTone}>{children}</SquareFace>;
 
 		default:
 			return <OvalFace skinTone={skinTone}>{children}</OvalFace>;
@@ -236,6 +238,21 @@ const HeartFace: FC<FaceInstanceProps> = ({
 			<path
 				fill={fillColor}
 				d="M550.5,307.59c0,194.87-178.06,407.51-275,407.51S.5,502.46,.5,307.59,123.62,.5,275.5,.5s275,112.22,275,307.09Z"
+			/>
+			{children}
+		</g>
+	);
+};
+
+const SquareFace: FC<FaceInstanceProps> = ({
+	skinTone: fillColor,
+	children,
+}) => {
+	return (
+		<g id="face-group" transform="scale(0.75, .75)">
+			<path
+				fill={fillColor}
+				d="m550.5,307.59c0,124.69-72.9,294.58-150.8,373.46-43.85,44.4-89.29,34.05-124.2,34.05s-76.26,6.86-118.24-34.05C77.16,602.97.5,435.45.5,307.59.5,112.72,123.62.5,275.5.5s275,112.22,275,307.09Z"
 			/>
 			{children}
 		</g>

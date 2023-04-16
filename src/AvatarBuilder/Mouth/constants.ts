@@ -9,6 +9,7 @@ export const LIP_COLORS: SelectOption[] = [
 ];
 
 export const LIP_SHAPES: SelectOption[] = [
-	{ label: "AnimeSmile", value: "smile" },
 	{ label: "Smile1", value: "smile1" },
+	{label: "Smile2", value: "smile2"},
+	{label: "Smile3", value: "smile3"},
 ];

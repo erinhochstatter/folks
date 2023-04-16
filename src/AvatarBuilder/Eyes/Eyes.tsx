@@ -80,9 +80,9 @@ const CircularEyes: FC<EyeProps> = ({ eyeColor }) => {
 	);
 };
 
-const Monolid: FC<EyeProps> = ({ eyeColor }) => {
+const Eyes2: FC<EyeProps> = ({ eyeColor }) => {
 	return (
-		<g id="monolid_eyes_group" transform="translate(85 300)">
+		<g id="eyes2_group" transform="translate(85 300)">
 			<defs>
 				<linearGradient id="eyeGradient" gradientTransform="rotate(60)">
 					<stop offset="5%" stopColor="transparent"></stop>

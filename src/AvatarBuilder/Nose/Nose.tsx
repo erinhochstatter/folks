@@ -95,15 +95,17 @@ const Nose3: FC<NoseProps> = ({ skinTone }) => {
 				</clipPath>
 			</defs>
 			<g>
-				<use href="#nose3Path" fill="url(#nose2Gradient)" />
-				<path
-					d="m35.94,124.54c-.47,3.13-8.6-.42-14.03-1.24s-9.45-4.02-8.98-7.15c.47-3.13,5.25-5.01,10.68-4.2s12.8,9.45,12.33,12.59Z"
-					fill={lightenDarkenColor(skinTone, 20)}
-				/>
-				<path
-					d="m71.16,128.71c.47,3.13,10.1-.65,16.48-1.6,6.39-.96,11.18-4.28,10.71-7.41-.47-3.13-6.03-4.9-12.41-3.94-6.39.96-15.25,9.82-14.78,12.95Z"
-					fill={lightenDarkenColor(skinTone, 20)}
-				/>
+				<use href="#nose3Path" fill="url(#nose3Gradient)" />
+				<g id="nose3_nostril_group">
+					<path
+						d="m35.94,124.54c-.47,3.13-8.6-.42-14.03-1.24s-9.45-4.02-8.98-7.15c.47-3.13,5.25-5.01,10.68-4.2s12.8,9.45,12.33,12.59Z"
+						fill={lightenDarkenColor(skinTone, 20)}
+					/>
+					<path
+						d="m71.16,128.71c.47,3.13,10.1-.65,16.48-1.6,6.39-.96,11.18-4.28,10.71-7.41-.47-3.13-6.03-4.9-12.41-3.94-6.39.96-15.25,9.82-14.78,12.95Z"
+						fill={lightenDarkenColor(skinTone, 20)}
+					/>
+				</g>
 				<use
 					clipPath="url(#nose3ClipPath)"
 					href="#nose3Path"

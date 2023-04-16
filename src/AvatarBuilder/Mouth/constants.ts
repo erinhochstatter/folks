@@ -1,11 +1,11 @@
 import { SelectOption } from "../../Shared";
 
 export const LIP_COLORS: SelectOption[] = [
-	{ label: "Pink", value: "pink" },
-	{ label: "Hot Pink", value: "hotpink" },
-	{ label: "Red", value: "red" },
-	{ label: "Brown", value: "brown" },
-	{ label: "Goth", value: "black" },
+	{ label: "Pink", value: "#ffc0cb" },
+	{ label: "Hot Pink", value: "#ff69b4" },
+	{ label: "Red", value: "#FF0000" },
+	{ label: "Brown", value: "#a52a2a" },
+	{ label: "Goth", value: "#000000" },
 ];
 
 export const LIP_SHAPES: SelectOption[] = [

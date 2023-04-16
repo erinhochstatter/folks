@@ -11,7 +11,7 @@ export const Eyes: FC<Props> = ({ eyeColor, eyeShape }) => {
 			return <CircularEyes eyeColor={eyeColor} />;
 
 		case "monolid":
-			return <Monolid eyeColor={eyeColor} />;
+			return <Eyes2 eyeColor={eyeColor} />;
 
 		default:
 			return <CircularEyes eyeColor={eyeColor} />;

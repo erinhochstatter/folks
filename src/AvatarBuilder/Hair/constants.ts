@@ -3,7 +3,7 @@ import { SelectOption } from "../../Shared";
 export const HAIR_COLORS: SelectOption[] = [
 	{ label: "Black", value: "black" },
 	{ label: "Blue", value: "blue" },
-	{ label: "Brown", value: "brown" },
+	{ label: "Brown", value: "#a52a2a" },
 	{ label: "Green", value: "green" },
 	{ label: "Grey", value: "grey" },
 	{ label: "Violet", value: "violet" },

@@ -1,12 +1,13 @@
 import { SelectOption } from "../../Shared";
 
 export const BROW_COLORS: SelectOption[] = [
-	{ label: "Black", value: "black" },
-	{ label: "Brown", value: "brown" },
-	{ label: "Grey", value: "grey" },
+	{ label: "Black", value: "#000000" },
+	{ label: "Brown", value: "#a52a2a" },
+	{ label: "Gray", value: "#808080" },
 ];
 
 export const BROW_SHAPES: SelectOption[] = [
 	{ label: "Unibrow", value: "unibrow" },
-	{ label: "tapered", value: "tapered" },
+	{ label: "Brows1", value: "brows1" },
+	{ label: "Brows2", value: "brows2" },
 ];

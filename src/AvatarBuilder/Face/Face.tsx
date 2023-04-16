@@ -196,11 +196,11 @@ export const Face: FC = () => {
 				{/* <ForegroundHair hairStyle={hairStyle} hairColor={hairColor} /> */}
 			</svg>
 			<Form title="face" svgTraits={[faceShapeTrait, skinToneTrait]} />
-			<Form title="hair" svgTraits={[hairStyleTrait, hairColorTrait]} />
+			{/* <Form title="hair" svgTraits={[hairStyleTrait, hairColorTrait]} /> */}
 			<Form title="brow" svgTraits={[browShapeTrait, browColorTrait]} />
 			<Form title="eyes" svgTraits={[eyeShapeTrait, eyeColorTrait]} />
 			<Form title="nose" svgTraits={[noseShapeTrait, noseColorTrait]} />
-			<Form title="lips" svgTraits={[lipShapeTrait, lipColorTrait]} />
+			<Form title="mouth" svgTraits={[lipShapeTrait, lipColorTrait]} />
 		</div>
 	);
 };
@@ -209,7 +209,6 @@ const FaceShape: FC<FaceShapeProps> = ({ skinTone, shape, children }) => {
 	switch (shape) {
 		case "oval":
 			return <OvalFace skinTone={skinTone}>{children}</OvalFace>;
-
 		case "heart":
 			return <HeartFace skinTone={skinTone}>{children}</HeartFace>;
 		case "square":
